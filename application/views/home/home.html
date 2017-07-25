@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../../../libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+<style>
+	.page{
+		border:1px solid green;
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+<table class="table table-bordered table-striped">
+	<tr>
+		<td>用户名</td>
+		<td>用户邮箱</td>
+		<td>注册时间</td>
+		<td>操作</td>
+	</tr>
+	{foreach $data as $key=>$value}
+	<tr>
+		<td>{$value->username}</td>
+		<td>{$value->email}</td>
+		<td>{$value->regTime}</td>
+		<td>
+			<a>修改</a>||
+			<a href='delete.php?id={$value->id}'>删除</a>
+		</td>
+	</tr>
+	<!-- {$value->username} -->
+	{/foreach}
+</table>
+<div class="page">
+	{{$page}}
+</div>
+
+
+</body>
+</html>
